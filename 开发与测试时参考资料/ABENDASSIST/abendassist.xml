@@ -1,0 +1,196 @@
+<SUF70UninstallData>
+<DataFilePath>E:\Program Files\Mainframe ABEND ASSIST\abendassist.dat</DataFilePath>
+<CPRegKey>SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Mainframe ABEND ASSIST2.0</CPRegKey>
+<EXELocation>C:\WINDOWS\Mainframe ABEND ASSIST\uninstall.exe</EXELocation>
+<UninstallFiles>
+<File>
+<Filename>E:\Program Files\Mainframe ABEND ASSIST\ABENDASSIST.exe</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>E:\Program Files\Mainframe ABEND ASSIST\SENXPCTL.ocx</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+</UninstallFiles>
+<UninstallShortcuts>
+<Filename>C:\Documents and Settings\Ò»µúÐ¡²Ë\×ÀÃæ\Mainframe ABEND ASSIST.lnk</Filename>
+<Filename>C:\Documents and Settings\Ò»µúÐ¡²Ë\Application Data\Microsoft\Internet Explorer\Quick Launch\Mainframe ABEND ASSIST.lnk</Filename>
+<Filename>C:\Documents and Settings\Ò»µúÐ¡²Ë\¡¸¿ªÊ¼¡¹²Ëµ¥\³ÌÐò\Mainframe ABEND ASSIST\Mainframe ABEND ASSIST.lnk</Filename>
+</UninstallShortcuts>
+<UninstallSupportFiles>
+<Filename>E:\Program Files\Mainframe ABEND ASSIST\IRIMG1.JPG</Filename>
+<Filename>E:\Program Files\Mainframe ABEND ASSIST\IRIMG2.JPG</Filename>
+<Filename>E:\Program Files\Mainframe ABEND ASSIST\IRIMG3.JPG</Filename>
+</UninstallSupportFiles>
+<UninstallFolders>
+<FolderPath>E:\Program Files\Mainframe ABEND ASSIST</FolderPath>
+<FolderPath>C:\WINDOWS\Mainframe ABEND ASSIST</FolderPath>
+<FolderPath>C:\Documents and Settings\Ò»µúÐ¡²Ë\¡¸¿ªÊ¼¡¹²Ëµ¥\³ÌÐò\Mainframe ABEND ASSIST</FolderPath>
+</UninstallFolders>
+<SessionVars>
+<Var>
+<Name>%ProductName%</Name>
+<Value>Mainframe ABEND ASSIST</Value>
+</Var>
+<Var>
+<Name>%CompanyName%</Name>
+<Value>IBMMAINFRAMES.com</Value>
+</Var>
+<Var>
+<Name>%ProductVer%</Name>
+<Value>2.0</Value>
+</Var>
+<Var>
+<Name>%Copyright%</Name>
+<Value>Copyright © 2006-2007 IBMMAINFRAMES.com Corporation</Value>
+</Var>
+<Var>
+<Name>%CompanyURL%</Name>
+<Value>http://www.ibmmainframes.com</Value>
+</Var>
+<Var>
+<Name>%WindowTitle%</Name>
+<Value>%ProductName% Setup</Value>
+</Var>
+<Var>
+<Name>%AppFolder%</Name>
+<Value>E:\Program Files\Mainframe ABEND ASSIST</Value>
+</Var>
+<Var>
+<Name>%AppShortcutFolderName%</Name>
+<Value>%ProductName%</Value>
+</Var>
+<Var>
+<Name>%InfoURL%</Name>
+<Value>http://www.ibmmainframes.com</Value>
+</Var>
+<Var>
+<Name>%ProductTagline%</Name>
+<Value>IBMMAINFRAMES.com Abend Assist</Value>
+</Var>
+<Var>
+<Name>%ApplicationDataFolder%</Name>
+<Value>C:\Documents and Settings\Ò»µúÐ¡²Ë\Application Data</Value>
+</Var>
+<Var>
+<Name>%CommonFilesFolder%</Name>
+<Value>C:\Program Files\Common Files</Value>
+</Var>
+<Var>
+<Name>%DesktopFolder%</Name>
+<Value>C:\Documents and Settings\Ò»µúÐ¡²Ë\×ÀÃæ</Value>
+</Var>
+<Var>
+<Name>%DesktopFolderCommon%</Name>
+<Value>C:\Documents and Settings\All Users\×ÀÃæ</Value>
+</Var>
+<Var>
+<Name>%FontsFolder%</Name>
+<Value>C:\WINDOWS\Fonts</Value>
+</Var>
+<Var>
+<Name>%MyDocumentsFolder%</Name>
+<Value>E:\My Documents</Value>
+</Var>
+<Var>
+<Name>%ProgramFilesFolder%</Name>
+<Value>C:\Program Files</Value>
+</Var>
+<Var>
+<Name>%StartFolder%</Name>
+<Value>C:\Documents and Settings\Ò»µúÐ¡²Ë\¡¸¿ªÊ¼¡¹²Ëµ¥</Value>
+</Var>
+<Var>
+<Name>%StartFolderCommon%</Name>
+<Value>C:\Documents and Settings\All Users\¡¸¿ªÊ¼¡¹²Ëµ¥</Value>
+</Var>
+<Var>
+<Name>%StartProgramsFolder%</Name>
+<Value>C:\Documents and Settings\Ò»µúÐ¡²Ë\¡¸¿ªÊ¼¡¹²Ëµ¥\³ÌÐò</Value>
+</Var>
+<Var>
+<Name>%StartProgramsFolderCommon%</Name>
+<Value>C:\Documents and Settings\All Users\¡¸¿ªÊ¼¡¹²Ëµ¥\³ÌÐò</Value>
+</Var>
+<Var>
+<Name>%StartupFolder%</Name>
+<Value>C:\Documents and Settings\Ò»µúÐ¡²Ë\¡¸¿ªÊ¼¡¹²Ëµ¥\³ÌÐò\Æô¶¯</Value>
+</Var>
+<Var>
+<Name>%StartupFolderCommon%</Name>
+<Value>C:\Documents and Settings\All Users\¡¸¿ªÊ¼¡¹²Ëµ¥\³ÌÐò\Æô¶¯</Value>
+</Var>
+<Var>
+<Name>%SystemFolder%</Name>
+<Value>C:\WINDOWS\system32</Value>
+</Var>
+<Var>
+<Name>%WindowsFolder%</Name>
+<Value>C:\WINDOWS</Value>
+</Var>
+<Var>
+<Name>%SystemDrive%</Name>
+<Value>C:</Value>
+</Var>
+<Var>
+<Name>%TempFolder%</Name>
+<Value>E:\Temp</Value>
+</Var>
+<Var>
+<Name>%TempLaunchFolder%</Name>
+<Value>E:\Temp\_ir_sf7_temp_0</Value>
+</Var>
+<Var>
+<Name>%RegOwner%</Name>
+<Value>Ð¡²Ë</Value>
+</Var>
+<Var>
+<Name>%RegOrganization%</Name>
+<Value>Ò»µúÐ¡²Ë</Value>
+</Var>
+<Var>
+<Name>%AppDrive%</Name>
+<Value>C:</Value>
+</Var>
+<Var>
+<Name>%DAOPath%</Name>
+<Value>%CommonFiles%\Microsoft Shared\DAO</Value>
+</Var>
+<Var>
+<Name>%SourceFilename%</Name>
+<Value>F:\OS390 Training\abendassist.exe</Value>
+</Var>
+<Var>
+<Name>%SourceFolder%</Name>
+<Value>F:\OS390 Training</Value>
+</Var>
+<Var>
+<Name>%SourceDrive%</Name>
+<Value>F:</Value>
+</Var>
+<Var>
+<Name>%UserName%</Name>
+<Value>Ð¡²Ë</Value>
+</Var>
+<Var>
+<Name>%UserCompany%</Name>
+<Value>Ò»µúÐ¡²Ë</Value>
+</Var>
+<Var>
+<Name>%SpaceAvailable%</Name>
+<Value>17.76 GB</Value>
+</Var>
+<Var>
+<Name>%SpaceRequired%</Name>
+<Value>5.37 MB</Value>
+</Var>
+</SessionVars>
+</SUF70UninstallData>

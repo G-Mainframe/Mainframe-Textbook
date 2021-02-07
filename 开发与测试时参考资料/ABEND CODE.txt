@@ -1,0 +1,728 @@
+1 ************************************************************************************************************************* A    0000
+  *                  SYSTEM COMPLETION CODE   ( SXXX )                                                                    * A    0100
+  ************************************************************************************************************************* A    0200
+ ===== < CODE =  A13 > =====                                                                                                AA13 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ AA13 0100
+  | TAPE I/O ERROR ( IEC151I )            | * HARDWARE                            | * RERUN                               | AA13 0200
+  |                                       |                                       | * RECREATE DATA SET                   | AA13 0300
+  |                                       | OFTEN OCCURRED DURING WRITING WITH    | * LABEL=(,SL)                         | AA13 0400
+  |                                       |DISP=MOD OR READING MULTI VOLUME DATA  |                                       | AA13 0500
+  |                                       |SET.                                   |                                       | AA13 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| AA13 1000
+ ===== < CODE =  B37 > =====                                                                                                AB37 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ AB37 0100
+  | SPACE SHORTAGE ( IEC030I )            | * PHISICALLY SPACE SHORTAGE           | * CHANGE PRIVATE VOLUME               | AB37 0200
+  |                                       |     * NO MORE SPACE IN THE VOLUME     | * SPECIFY MULTI VOLUME                | AB37 0300
+  |                                       |     * EXTENTION 16 OVER               | * UNIT=SYSDA ===> UNIT=(DISK2,6)      | AB37 0400
+  |                                       | * PRIMARY SPACE NOT AVAILABLE         |                                       | AB37 0500
+  |                                       | * WORK SPACE NOT AVAILABLE            |                                       | AB37 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| AB37 1000
+ ===== < CODE =  C03 > =====                                                                                                AC03 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ AC03 0100
+  | ENTER STOP COMMAND WHEN BMP REPLY     | CLOSE MACRO INSTRUCTION NOT EFFECTIVE | USE STOP STATEMENT IN PROGRAM         | AC03 0200
+  +---------------------------------------+---------------------------------------+---------------------------------------| AC03 1000
+ ===== < CODE =  D03 > =====                                                                                                AD03 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ AD03 0100
+  | TAPE I/O ERROR                        | HARDWARE                              | RERUN                                 | AD03 0200
+  +---------------------------------------+---------------------------------------+---------------------------------------| AD03 1000
+ ===== < CODE =  D37 > =====                                                                                                AD37 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ AD37 0100
+  | EOV : NO SECONDARY QUANTITY           | PRIMARY SPACE OVER WHEN NOT SPECIFIED | * INCREASE PRIMARY SPACE              | AD37 0200
+  |  ( IEC031I )                          |SECONDARY SPACE                        | * SPECIFY SECONDARY SPACE             | AD37 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| AD37 1000
+ ===== < CODE =  E00 > =====                                                                                                AE00 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ AE00 0100
+  | ERROR DURING EXCP                     | CSA SHORTAGE                          | DECREASE POOL SIZE IN CSA             | AE00 0200
+  +---------------------------------------+---------------------------------------+---------------------------------------| AE00 1000
+ ===== < CODE =  E23 > =====                                                                                                AE23 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ AE23 0100
+  | ERROR DURING WTOR MACRO INSTRUCTION   | OPERATOR ENTER REPLY COMMAND AFTER    | RERUN                                 | AE23 0200
+  |                                       |DISPLAYED NORMAL END MESSAGE           |                                       | AE23 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| AE23 1000
+ ===== < CODE =  E37 > =====                                                                                                AE37 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ AE37 0100
+  | * EOV : PDS OUT OF SPACE              | * SPACE SHORTAGE IN PDS               | * CONDENCE                            | AE37 0200
+  | * INSUFFICIENT VOLUME                 | * NO AVAILABLE SPACE IN THE VOLUME    | * DELETE NOT USED DATA SET            | AE37 0300
+  | * ( IEC032I )                         |                                       | * SPECIFY OTHER VOLUME                | AE37 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| AE37 1000
+ ===== < CODE =  0CA > =====                                                                                                A0CA 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A0CA 0100
+  | DECIMAL-OVERFLOW                      | FIXED OVERFLOW                        | INCREASE FIELD LENGTH                 | A0CA 0200
+  +---------------------------------------+---------------------------------------+---------------------------------------| A0CA 1000
+ ===== < CODE =  0C1 > =====                                                                                                A0C1 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A0C1 0100
+  | OPERATION EXCEPTION                   | * PROGRAM ERROR --- DESTROY OTHER AREA|                                       | A0C1 0200
+  |                                       |                     ( EX. TABLE OVER )|                                       | A0C1 0300
+  |                                       | * ERROR WHEN LINK                     |                                       | A0C1 0400
+  |                                       |    * GO UNRESOLVED MODULE             |                                       | A0C1 0500
+  |                                       |    * NO-CALL EXTERNAL MODULE          |                                       | A0C1 0600
+  |                                       | * HARDWARE                            | * RERUN                               | A0C1 0700
+  |                                       | * OTHER                               |                                       | A0C1 0800
+  |                                       |    * MORE LONGER BLKSIZE FILE ARRANGED| * REARRANGE DD STATEMENTS IN ORDER OF | A0C1 0900
+  |                                       |     LATER POSITION WHEN MULTI INPUT   |  DECREASE OF BLKSIZE                  | A0C1 1000
+  |                                       |     FILE CONCATINATION                |                                       | A0C1 1100
+  +---------------------------------------+---------------------------------------+---------------------------------------| A0C1 1200
+ ===== < CODE =  0C4 > =====                                                                                                A0C4 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A0C4 0100
+  | PROTECTION EXCEPTION                  | * UNKNOWN                             | * RERUN                               | A0C4 0200
+  |                                       | * NOT SPECIFIED SYMBOLIC PARAMETER    | * SPECIFY IT IN JOB CARD              | A0C4 0300
+  |                                       |  IN JOB CARD WHICH USED IN STEP       |                                       | A0C4 0400
+  |                                       | * INVALID PARAMETER IN EXTOSUT        | * PARM='IEHPROGM,X=X'                 | A0C4 0500
+  |                                       | * ABEND IN SVC WHEN BY-PASS BECAUSE   |                                       | A0C4 0600
+  |                                       |  OF LOG TAPE DATA CHECK               |                                       | A0C4 0700
+  |                                       | * FOUR TIMES SPECIFIED '/STA,LINE,ALL'|                                       | A0C4 0800
+  |                                       | * TOO LONG MASSAGE INPUT FOR MOP      |                                       | A0C4 0900
+  |                                       |  ANALYSIS COMMAND                     |                                       | A0C4 1000
+  +---------------------------------------+---------------------------------------+---------------------------------------| A0C4 1100
+ ===== < CODE =  0C6 > =====                                                                                                A0C6 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A0C6 0100
+  | SPECIFICATION EXCEPTION               | NOT FOUND CONTROL CARD IN PROGM1      | CONTROL CARD SET UP                   | A0C6 0200
+  +---------------------------------------+---------------------------------------+---------------------------------------| A0C6 1000
+ ===== < CODE =  0C7 > =====                                                                                                A0C7 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A0C7 0100
+  | DATA EXCEPTION                        | * ALL '0' IN DECIMAL ARITHMETIC FIELD | RECREATE FILE                         | A0C7 0200
+  |                                       | * INVALID PACKED DATA WHEN MOP LOGON  |                                       | A0C7 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A0C7 1000
+ ===== < CODE =  0F3 > =====                                                                                                A0F3 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A0F3 0100
+  | MACHINE CHECK                         | HARDWARE                              | RERUN                                 | A0F3 0200
+  +---------------------------------------+---------------------------------------+---------------------------------------| A0F3 1000
+ ===== < CODE =  000 > =====                                                                                                A000 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A000 0100
+  | * SORT WORK TOO SMALL                 | * SORTWORK SPACE SHORTAGE ( U0046 )   | * INCREASE SP PARAMETER               | A000 0200
+  | * STEP SYNTAX ERROR                   | * WRONG LOAD MODULE                   |                                       | A000 0300
+  |                                       | * NOT SPECIFIED OPEN/CLOSE FOR 0      | * OPEN/CLOSE STATEMENT ADDITON        | A000 0400
+  |                                       |  RECORD                               |                                       | A000 0500
+  +---------------------------------------+---------------------------------------+---------------------------------------| A000 1000
+ ===== < CODE =  001 > =====                                                                                                A001 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A001 0100
+  | CHECK/GET/PUT : I/O ERROR ENCOUNTERED | * NOT SPECIFIED OPEN BUT CLOSE FOR 0  | * OPEN STATEMENT ADDITION             | A001 0200
+  |  ( IEC020I )                          |  RECORD                               |                                       | A001 0300
+  |                                       | * INVALID DCB SPECIFIED               | * CHANGE DCB                          | A001 0400
+  |                                       | * HARDWARE                            | * RERUN                               | A001 0500
+  +---------------------------------------+---------------------------------------+---------------------------------------| A001 1000
+ ===== < CODE =  002 > =====                                                                                                A002 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A002 0100
+  |                                       | * REFFER NOT CREATED TABLE DATA       | * CREATE TABLE                        | A002 0200
+  |  ( IEC036I )                          | * DCB DIFFERENCE SORTIN FROM SORTOUT  | * SPECIFY SAME DCB                    | A002 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A002 1000
+ ===== < CODE =  013 > =====                                                                                                A013 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A013 0100
+  | * OPEN DCB INCORRECT                  | * HARD ERROR                          | * SPECIFY OTHER TAPE UNIT/WORK DISK   | A013 0200
+  | * NO MEMBER FOUND                     |                                       |                                       | A013 0300
+  | * NO DIRECTORY ALLOCATION             | * -20  DIFFERENCE BLKSIZE FROM OTHER  | * CORRECT DCB                         | A013 0400
+  |                                       |       DCB PARAMETER                   |                                       | A013 0500
+  | * ( IEC141I )                         | * -50  NOT SPECIFIED OUTPUT OPTION    | * SPECIFY OUTPUT OPTION               | A013 0600
+  |                                       |       TO THE FILE ALLOCATED PRINTER   |                                       | A013 0700
+  |                                       | * -60  LRECL NOT EQUAL TO BLKSIZE IN  | * LRECL = BLKSIZE                     | A013 0800
+  |                                       |       RECFM=F DATA SET                |                                       | A013 0900
+  |                                       | * -64  ERROR IN NULL FILE EXCEPT FOR  | * USE REAL FILE                       | A013 1000
+  |                                       |       QSAM,BSAM                       | * USE QSAM,BSAM                       | A013 1100
+  |                                       | *   ?  DISK TO DISK('DD') COPY IN     | * COPY BY IEBGENER                    | A013 1200
+  |                                       |       RECFM=FBA DATA SET              |                                       | A013 1300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A013 1400
+ ===== < CODE =  028 > =====                                                                                                A028 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A028 0100
+  | I/O ERROR ATTEMPTING PAGE-IN OPERATION| I/O ERROR (PAGING)                    | RERUN                                 | A028 0200
+  +---------------------------------------+---------------------------------------+---------------------------------------| A028 1000
+ ===== < CODE =  03B > =====                                                                                                A03B 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A03B 0100
+  | OPEN : NO RECORDS FROM ISAM/VSAM FILE | * 0 RECORD ISAM FILE                  | * REGENERATE FILE                     | A03B 0200
+  |                                       | * INVALID PARAMETER WHEN DEFINE VSAM  | * CORRECT PARAMETER                   | A03B 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A03B 1000
+ ===== < CODE = 039  > =====                                                                                                A039 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A039 0100
+  |  SCAN : END OF DATA                   |  PREVIOUS STEP RETURNED 'CODE 0008'   |  EXTEND PRIMARY SPACE OF DATA BASE.   | A039 0200
+  |                                       | FOR DATA BASE SPACE BEING INSUFFICIENT|                                       | A039 0300
+  |                                       | .                                     |                                       | A039 0400
+  |                                       |  THIS ERROR OCCURRED WHEN THAT FILE   |                                       | A039 0500
+  |                                       | WAS RETRIEVED( GET ) AT THE FOLLOWING |                                       | A039 0600
+  |                                       | STEP.                                 |                                       | A039 0700
+  |                                       |                                       |                                       | A039 0800
+  +---------------------------------------+---------------------------------------+---------------------------------------| A039 0900
+ ===== < CODE = 052  > =====                                                                                                A052 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A052 0100
+  |  VSAM FILE : I/O MACRO ERROR          |  MORE THAN TWO USER PROGRAMS UPDATED  |  CHANGE THE OPERATION SEQUENCE.       | A052 0200
+  |                                       | VSAM FILE(HAVING DISP=SHR) AT THE     |                                       | A052 0300
+  |                                       | SAME TIME.                            |                                       | A052 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A052 0500
+ ===== < CODE = 071  > =====                                                                                                A071 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A071 0100
+  |  OPERATOR PRESSED THE RESTART KEY.    |  OPERATOR PRESSED THE RESTART BUTTON  |  RERUN                                | A071 0200
+  |                                       | DURING EXECUTION OF A USER PROGRAM.   |                                       | A071 0300
+  |                                       |                                       |                                       | A071 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A071 0500
+ ===== < CODE = 084  > =====                                                                                                A084 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A084 0100
+  |                                       |  THE ERROR OCCURRED WHILE ATTEMPTING  |  RE-DEFINE CLUSTER, AND LOAD.         | A084 0200
+  |                                       | TO LOAD A DATA WITH OVERRAPPING       |                                       | A084 0300
+  |                                       | TO VSAM DATA SET USING NON-REUSE      |                                       | A084 0400
+  |                                       | OPTION.                               |                                       | A084 0500
+  |                                       |                                       |                                       | A084 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| A084 0700
+ ===== < CODE = 122  > =====                                                                                                A122 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A122 0100
+  |  OPERATOR CANCEL                      | * PROGRAM LOOP                        |                                       | A122 0200
+  |                                       | * WAITING FOR RESOURCES               |                                       | A122 0300
+  |                                       | * CPU 100%                            |                                       | A122 0400
+  |                                       | * SIGN ON MSG HAVE BEEN FULL          | * START-STOP                          | A122 0500
+  |                                       |                                       |                                       | A122 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| A122 1000
+ ===== < CODE = 138  > =====                                                                                                A138 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A138 0100
+  |  TWO ENQ MACRO WERE ISSUED FOR THE    |  THE VSAM FILE WHICH GENERATED WITH   |  TO SPECIFY STEPCAT/JOBCAT.           | A138 0200
+  | SAME RESOURCE IN THE SAME TASK.       | STEPCAT/JOBCAT HAVE BEEN RETRIEVED    |                                       | A138 0300
+  |                                       | WITHOUT STEPCAT/JOBCAT.               |                                       | A138 0400
+  |                                       |                                       |                                       | A138 0500
+  +---------------------------------------+---------------------------------------+---------------------------------------| A138 1000
+ ===== < CODE = 2F3  > =====                                                                                                A2F3 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A2F3 0100
+  |  THE JOB WAS RUNNING WHEN A SYSTEM    |  SYSTEM LOOP.                         |  IPL                                  | A2F3 0200
+  | FAILURE OCCURRED.                     |                                       |                                       | A2F3 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A2F3 0400
+ ===== < CODE = 212  > =====                                                                                                A212 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A212 0100
+  |  AN ERROR OCCURRED DURING THE         |  TABLE OVER                           |  MAKING CORRECTION, AND RERUN         | A212 0200
+  | EXECUTION OF SVC18.                   |                                       |                                       | A212 0300
+  |         (IEC909I)                     |                                       |                                       | A212 0400
+  |                                       |                                       |                                       | A212 0500
+  +---------------------------------------+---------------------------------------+---------------------------------------| A212 1000
+ ===== < CODE = 213  > =====                                                                                                A213 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A213 0100
+  |  DATA SET OPEN ERROR                  | * THE DATA SET COULD NOT BE FOUND ON  | RE-CREATION THE FILE                  | A213 0200
+  |     ( DATA SET NOT FOUND )            |  THE VOLUME SPECIFIED BY THE DD       |                                       | A213 0300
+  |     ( IEC143I )                       |  STATEMENT OR IN THE CATALOG.         |                                       | A213 0400
+  |                                       | * THE DIFERENT ATTRIBUTE WAS SPECIFIED|                                       | A213 0500
+  |                                       |  TO THE SAME FILE BY ROUTE AND CHILD  |                                       | A213 0600
+  |                                       |  MODULE.                              |                                       | A213 0700
+  |                                       | * OPEN ABEND BY THE CASE OF USING     |                                       | A213 0800
+  |                                       |  EXTERNAL SUBROUTINE.                 |                                       | A213 0900
+  |                                       |                                       |                                       | A213 1000
+  +---------------------------------------+---------------------------------------+---------------------------------------| A213 1100
+ ===== < CODE = 214  > =====                                                                                                A214 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A214 0100
+  |  CAN NOT READ A DATA SET ON MAGNETIC  |  I/O ERROR                            |  REGENERATE A DATA SET ON TAPE        | A214 0200
+  | TAPE   (IEC210I)                      |                                       |                                       | A214 0300
+  |                                       |                                       |                                       | A214 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A214 0500
+ ===== < CODE = 222  > =====                                                                                                A222 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A222 0100
+  |  OPERATOR CANCEL                      | * PROGRAM LOOP                        |  FIND OUT WHY THE OPERATOR CANCELED   | A222 0200
+  |                                       | * WAITING FOR RESOURCES               | YOUR JOB, AND MAKE ANY NECESSARY      | A222 0300
+  |                                       |            ( DASD SPACE / DEVICES )   | CORRECTIONS. THEN RERUN THE JOB.      | A222 0400
+  |                                       |                                       |                                       | A222 0500
+  +---------------------------------------+---------------------------------------+---------------------------------------| A222 0600
+ ===== < CODE = 233  > =====                                                                                                A233 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A233 0100
+  |  INVALID PARAMETER HAVE BEEN PASSED   |  SYSTEM ERROR                         |  AFTER IPL, THEN RERUN THE JOB.       | A233 0200
+  | TO SVC DUMP.                          |                                       |                                       | A233 0300
+  |                                       |                                       |                                       | A233 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A233 0500
+ ===== < CODE = 237  > =====                                                                                                A237 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A237 0100
+  |  LABEL VERIFICATION ERROR             | * THE BLOCK COUNT IN THE DCB DOES     |  REGENARATE A DATA SET ON TAPE.       | A237 0200
+  |         (IEC023I)                     |   NOT MATCH THAT IN THE TRAILER LABEL.|                                       | A237 0300
+  |                                       | * THE DSNAME IN A HEADER LABEL DOES   |                                       | A237 0400
+  |                                       |   NOT MATCH THAT IN THE JFCB.         |                                       | A237 0500
+  |                                       |                                       |                                       | A237 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| A237 0700
+ ===== < CODE = 271  > =====                                                                                                A271 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A271 0100
+  |  PGFIX OR PGFREE REQUESTED AND CALL   |  IMS/360 PROGRAM EXECUTED ON MVS      |                                       | A271 0200
+  | IS NOT AUTHORIZED.                    | MACHINE.                              |                                       | A271 0300
+  |                                       |                                       |                                       | A271 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A271 0500
+ ===== < CODE = 30A  > =====                                                                                                A30A 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A30A 0100
+  |  FREE MAIN, SVC ERROR                 |  PROBABLY USER ERROR.                 |  MAKING CORRECTIONS, AND EXECUTE THE  | A30A 0200
+  |                                       |        (EX. TABLE OVER )              | JOB STEP AGAIN.                       | A30A 0300
+  |                                       |                                       |                                       | A30A 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A30A 0500
+ ===== < CODE = 301  > =====                                                                                                A301 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A301 0100
+  |  WAIT MACRO INSTRUCTION SPECIFIED AN  |  TO HAVE READ DUMMY DATA BASE.        |  CHANGE THE PROBEM PROGRAM, AND THEN  | A301 0200
+  | ECB WHOSE WAIT FLAG WAS ALREADY ON.   |                                       | EXECUTE THE JOB STEP AGAIN.           | A301 0300
+  |                                       |                                       |                                       | A301 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A301 0500
+ ===== < CODE = 314  > =====                                                                                                A314 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A314 0100
+  |  CLOSE I/O ERROR FOR A DATA SET ON A  |  MSS TROUBLE                          |  RERUN THE JOB.                       | A314 0200
+  | DASD.   (IEC211I)                     |                                       |                                       | A314 0300
+  |                                       |                                       |                                       | A314 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A314 0500
+ ===== < CODE = 322  > =====                                                                                                A322 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A322 0100
+  | TIME EXCEEDED.                        | * PROGRAM ENDLESS LOOP.               | * CORRECT THE PROGRAM ERRORS.         | A322 0200
+  |                                       | * PROGRAM HAS THE USELESS AND TIME-   | * IF NO ERRORS FOUND, SPECIFY A LONGER| A322 0300
+  |                                       |   EATIG LOGICS.                       |   TIME IN THE TIME PARAMETER.         | A322 0400
+  |                                       | * JOB HAS A GREAT MANY STEPS.         |                                       | A322 0500
+  +---------------------------------------+---------------------------------------+---------------------------------------| A322 1000
+ ===== < CODE = 400  > =====                                                                                                A400 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A400 0100
+  | DCB ADDRESS IN THE DEB DIFFERS FROM   | * ISAM FILE,IN CASE OF WORK,MUST BE   | * CHNGE JCL WITH USING 'VOL=REF=*.XX' | A400 0200
+  | DCB ADDRESS IN THE IOB.               |   ON THE SAME VOLUME.                 |   SPECIFICATION.                      | A400 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A400 1000
+ ===== < CODE = 413  > =====                                                                                                A413 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A413 0100
+  | MSS FAILURE IN ACQUIRE CODE = NNN     | * 0C8 : THE FIRST DATA SET WHICH      | * EXCHANGE THE ORDER.                 | A413 0200
+  |            (IEC145I)                  |         CONCATINATED IS SMALLER THAN  | * OVERRIDE DCB WHICH SPECIFY THE LARGE| A413 0300
+  |                                       |         THE SECOND.                   |   BLKSIZE ON THE FIRST DD STATEMENT.  | A413 0400
+  |                                       | * 094 : MSS ERROR.                    | * RERUN AFTER THE MSS RECOVERY.       | A413 0500
+  +---------------------------------------+---------------------------------------+---------------------------------------| A413 1000
+ ===== < CODE = 522  > =====                                                                                                A522 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A522 0100
+  | ALL TASKS IN JOB STEP EXCEEDED WAIT   | * HARD                                |                                       | A522 0200
+  | TIME.                                 |    * MSS MOUNT PENDING.               |                                       | A522 0300
+  |                                       |    * DISK I/O ERROR.                  |                                       | A522 0400
+  |                                       | * OPERATION                           |                                       | A522 0500
+  |                                       |    * OPERATOR DID NOT KEY IN REPLY.   |                                       | A522 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| A522 1000
+ ===== < CODE = 613  > =====                                                                                                A613 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A613 0100
+  | OPEN I/O ERROR FOR A TAPE DATA SET.   | * HARD                                | * CHANGE THE TAPE UNIT.               | A613 0200
+  |            (IEC147I)                  |                                       |                                       | A613 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A613 1000
+ ===== < CODE = 637  > =====                                                                                                A637 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A637 0100
+  | THE ERROR OCCURED AT AN END-OF-VOLUME | * I/O ERROR                           | * RE-CATALOGUE.                       | A637 0200
+  | FOR A DATA SET ON TAPE OR AN END-OF-V |                                       |                                       | A637 0300
+  | OLUME DURING CONCATINATION.           |                                       |                                       | A637 0400
+  |            (IEC026I)                  |                                       |                                       | A637 0500
+  +---------------------------------------+---------------------------------------+---------------------------------------| A637 1000
+ ===== < CODE = 706  > =====                                                                                                A706 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A706 0100
+  | LINK ERROR OF EXCUTION OF LINK,LOAD,  | * THE REQUESTED LOAD MODULE WAS MARKED| * RECATALOGUE AFTER CORRECTING PGM    | A706 0200
+  | ATTACH,XCTL MACRO.                    |   BY THE LINKAGE EDIT AS NOT EXCUTABLE|   ERROR.                              | A706 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A706 1000
+ ===== < CODE = 722  > =====                                                                                                A722 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A722 0100
+  | THE JOBS OUTPUT LIMIT IS EXCEEDED.    | * ACTUAL OUTPUT LINE COUNT IS OVER THE| * SPECIFY APPROPRIATE LIMIT COUNT IN  | A722 0200
+  | CANCELED BY JES2.                     |   OUTPUT LIMIT COUNT SPECIFIED BY THE |   THE JOBPARM.                        | A722 0300
+  |                                       |   JOBPARM.                            |                                       | A722 0400
+  |                                       | * JOB IS CANCELED BECAUSE OF OPERATION|                                       | A722 0500
+  |                                       |   CODE SET '3X' ON PRODUCTION JOB.    |                                       | A722 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| A722 1000
+ ===== < CODE = 737  > =====                                                                                                A737 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A737 0100
+  | MSS MOUNT FAILURE.                    | * I/O ERROR.                          |                                       | A737 0200
+  |  * MSS FAILURE IN AQUIRE ABEND.       | * I/O ERROR WHEN RESERVE THE SPACE ON | * RERUN AFTER THE MSS RECOVERY.       | A737 0300
+  |                                       |   MSS.                                |                                       | A737 0400
+  |  * MSS MOUNT FAILURE FOR VOL=NNNNNN   | * ERROR WHEN MOUNT MSS.               |                                       | A737 0500
+  |  * VSAM PHYSICAL ERROR.               |                                       | * VSAM RELOAD AFTER THE MSS RECOVERY. | A737 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| A737 1000
+ ===== < CODE = 80A  > =====                                                                                                A80A 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A80A 0100
+  | ERROR OF R-FORM GETMAIN MACRO INSTRUC-| * LACK OF REGION SIZE.                | * ADD TO REGION SIZE.                 | A80A 0200
+  | TION EXCUSION.                        | * LACK OF ISA SIZE.                   | * ADD TO ISA SIZE.                    | A80A 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A80A 1000
+ ===== < CODE = 804  > =====                                                                                                A804 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A804 0100
+  | ERROR OF EU,LU,OR VU FORM GETMAIN MAC-| * LACK OF REGION SIZE.                | * ADD TO REGION SIZE.                 | A804 0200
+  | RO INSTRUCTION EXCUSION.              | * LACK OF ISA SIZE.                   | * ADD TO ISA SIZE.                    | A804 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A804 1000
+ ===== < CODE = 806  > =====                                                                                                A806 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A806 0100
+  | PROGRAM MISSING.                      | * PROGRAM ENTRY POINT IS NOT FOUND IN | * RECATALOG.                          | A806 0200
+  |                                       |   THE INDICATED LIBRARY.              | * CHANGE MEMBER NAME.                 | A806 0300
+  |                                       |                                       | * CHANGE STEPLIB OR JOBLIB NAME.      | A806 0400
+  |                                       | * SERCH MEMBER WHEN LIBRARY IS BEING  |                                       | A806 0500
+  |                                       |   CONDENSED.                          |                                       | A806 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| A806 1000
+ ===== < CODE = 813  > =====                                                                                                A813 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A813 0100
+  | SORT OPEN ERROR.                      | * SYMBOLIC SPECIFINING ERROR.         | * CORRECT SYMBOLIC.                   | A813 0200
+  |            (IEC149I)                  |                                       |                                       | A813 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A813 1000
+ ===== < CODE = 822  > =====                                                                                                A822 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A822 0100
+  | REGION UNAVAILABLE.                   | *                                     | * SIMPLE RERUN.                       | A822 0200
+  +---------------------------------------+---------------------------------------+---------------------------------------| A822 1000
+ ===== < CODE = 837  > =====                                                                                                A837 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A837 0100
+  | THE ERROR OCCURED AT AN END-OF-VOLUME | * 1 FILE EXTENDED OVER 5 TAPE VOLUMES.| * CHANGE FROM 1200FT TO 2400FT.       | A837 0200
+  | FOR A SEQUENTIAL DATA SET.            |                                       |                                       | A837 0300
+  |            (IEC028I)                  |                                       |                                       | A837 0300
+  +---------------------------------------+---------------------------------------+---------------------------------------| A837 1000
+ ===== < CODE = 878  > =====                                                                                                A878 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A878 0100
+  | THE ERROR OCCURED DURING,EXCUSION OF  | * MORE VIRTUAL STORAGE WAS REQUESTED  | * MAKE THE ENOUGH FREE SPACE.         | A878 0200
+  | AN RC OR RU FORM GETMAIN MACRO INSTR- |   THAN WAS AVAILABLE.                 | * EXTEND THE SPACE PARAMETER.         | A878 0300
+  | UCTION.                               | * A NEGATIVE LENGTH WAS SPECIFIED.    |                                       | A878 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A878 1000
+ ===== < CODE = 90A  > =====                                                                                                A90A 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A90A 0100
+  | INPUT TAPE DATA CHECK.                | * HARD ERROR.                         | * SYMPLE RERUN.                       | A90A 0200
+  |                                       | * INPUT,OUTPUT DD IS SPECIFIED DUMMY  |                                       | A90A 0300
+  |                                       |   ON USING VV1 UTILITY.               |                                       | A90A 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A90A 1000
+ ===== < CODE = 913  > =====                                                                                                A913 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ A913 0100
+  | INSUFFICIENT ACCESS AUTHORITY.        | * READ THE FILE WHICH IS REGISTERED   | * SPECIFY CORRECT USER ID AND PASS    | A913 0200
+  |                                       |   TO RACF WITHOUT PASSWORD SPECIFICA- |   WORD.                               | A913 0300
+  |                                       |   TION.                               |                                       | A913 0400
+  +---------------------------------------+---------------------------------------+---------------------------------------| A913 1000
+1 ************************************************************************************************************************* O    0000
+  *                  ON CONDITION CODE        ( XXXX )                                                                    * O    0100
+  ************************************************************************************************************************* O    0200
+ ===== < CODE = 0021 > =====                                                                                                O00210000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O00210100
+  |  RECORD VARIABLE SMALLER THAN RECORD  | * DCB SPECIFICATION MISS.             | * MAKING CORRECTION OF USER PGM.      | O00210200
+  | SIZE.                                 |    THAT DCB WAS SPECIFIED BY THE DD   |                                       | O00210300
+  |                                       |   STATEMENT 'SORTOUT' OF PREVIOUS     |                                       | O00210400
+  |                                       |   STEP.                               |                                       | O00210500
+  |                                       | * DECLARE OF THE RECORD IN THE USER   | * MAKING CORRECTION OF JCL.           | O00210600
+  |                                       |  PROGRAM WAS INCORRECT.               |                                       | O00210700
+  |                                       |                                       |                                       | O00210800
+  +---------------------------------------+---------------------------------------+---------------------------------------| O00211000
+ ===== < CODE = 0022 > =====                                                                                                O00220000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O00220100
+  |  RECORD VARIABLE LAGER THAN RECORD    |  LRECL (WHICH IS DCB SUBPARAMETER)    | MAKING CORRECTION OF JCL.             | O00220200
+  | SIZE.                                 | SPECIFICATION MISS.                   |                                       | O00220300
+  |                                       |                                       |                                       | O00220400
+  +---------------------------------------+---------------------------------------+---------------------------------------| O00221000
+ ===== < CODE = 0041 > =====                                                                                                O00410000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O00410100
+  |  UNCORRECTABLE TRANSMISSION ERROR ON  |  ( UNKNOWN )                          |  RELOAD THE DATA BASE, AND RERUN THE  | O00410200
+  | OUTPUT DATA SET.                      |                                       | JOB.                                  | O00410300
+  |                                       |                                       |                                       | O00410400
+  +---------------------------------------+---------------------------------------+---------------------------------------| O00411000
+ ===== < CODE = 0042 > =====                                                                                                O00420000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O00420100
+  |  UNCORRECTABLE TRANSMISSION ERROR IN  | * HARD I/O ERROR                      | * RERUN THE JOB.                      | O00420200
+  | INPUT DATA SET.                       |                                       |   (WHEN MSS TROUBLE, CHECK MSS I/O    | O00420300
+  |                                       |                                       |    ERROR.)                            | O00420400
+  |                                       | * '0' RECORD FILE WAS NOT OPENED AND  | * WHEN '0' RECORD FILE IS CREATED,    | O00420500
+  |                                       |  CLOSED IN THE PREVIOUS STEP.         |  THAT FILE MUST BE OPENED.            | O00420600
+  |                                       |                                       |                                       | O00420700
+  +---------------------------------------+---------------------------------------+---------------------------------------| O00421000
+ ===== < CODE = 0082 > =====                                                                                                O00820000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O00820100
+  |  CONFLICT BETWEEN FILE ATTRIBUTES AND |  AFTER DEFINE CLUSTER, THE RECORD     | * WRITE THE 1ST RECORD BY UTILITY     | O00820200
+  | PHISICAL ORGANIZATION OF DATA SET,    | WAS WRITTEN DIRECTLY TO VSAM KSDS     |           ( REPRO OR JPD0VV1 ... ) .  | O00820300
+  | E.G BETWEEN FILE ORGANIZATION AND     | WITH ZERO RECORD.                     | * ADD NEXT LOGIC TO USER PGM.         | O00820400
+  | DEVICE TYPE.                          |  THE 1ST WRITING TO VSAM KSDS WITH    |    IF ONCODE=82 OCCURRED,             | O00820500
+  |                                       | ZERO RECORD MUST BE SEQUENTIAL WRITING|    + OPEN THE VSAM KSDS WITH SEQUEN-  | O00820600
+  |                                       | .                                     |     TIAL, OUTPUT ATTRIBUTE BY TITLE   | O00820700
+  |                                       |                                       |     OPTION, AND                       | O00820800
+  |                                       |                                       |    + WRITE HIGH VALUE RECORD, AND     | O00820900
+  |                                       |                                       |    + CLOSE THE FILE,                  | O00821000
+  |                                       |                                       |       AND AFTER ABOVE ACTION,         | O00821100
+  |                                       |                                       |     PASS THE CONTROL THE TOP POSITION | O00821200
+  |                                       |                                       |     OF PGM.                           | O00821300
+  |                                       |                                       |                                       | O00821400
+  |                                       |                                       |   USING TITLE OPTION, AMP='STRNO=1'   | O00821500
+  |                                       |                                       |  MUST BE SPECIFIED ON DD CARD.        | O00821600
+  +---------------------------------------+---------------------------------------+---------------------------------------| O00821700
+ ===== < CODE = 0083 > =====                                                                                                O00830000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O00830100
+  | AFTER MERGING ENVIRONMENT OPTIONS WITH| DIFFERENCE PGM DCB FROM JCL DCB       | CORRECT JCL DCB                       | O00830200
+  |DD STATEMENT AND DATA SET LABEL, DATA  |                                       |                                       | O00830300
+  |SET SPECIFICATION INCOMPLETE,          |                                       |                                       | O00830400
+  | E.G. BLOCK SIZE OR RECORD FORMAT HAS  |                                       |                                       | O00830500
+  |NOT BEEN SPECIFIED.                    |                                       |                                       | O00830600
+  +---------------------------------------+---------------------------------------+---------------------------------------| O00831000
+ ===== < CODE = 0084 > =====                                                                                                O00840000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O00840100
+  | NO DD STATEMENT ASSOCIATING FILE WITH | * JCL WORK CORRECTION MISTAKE         | * CORRECT JCL WORK ( SP30J )          | O00840200
+  |DATA SET                               | * NOT SPECIFIED DD STATEMENT          | * ADD DD STATEMENT                    | O00840300
+  |                                       | * INVALID DD STATEMENT SPECIFIED      | * CORRECT DD STSTEMENT                | O00840400
+  |                                       | * INVALID FILE NAME SPECIFI D IN PGM  | * CORRECT PGM                         | O00840500
+  +---------------------------------------+---------------------------------------+---------------------------------------| O00841000
+ ===== < CODE = 0092 > =====                                                                                                O00920000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O00920100
+  | VSAM DATA SET OPEN ERROR              | * NOT CLOSED THE VSAM DATA SET IN     | * USE VERIFY COMMAND, AND CLOSE DATA  | O00920200
+  |                                       |  LAST USE                             |  SET                                  | O00920300
+  |                                       | * DATA SET SHARED WITH MULTI PROJECTS,| * USE VERIFY COMMAND CAREFULLY        | O00920400
+  |                                       |  AFTER ONE IS ABEND AND NOT CLOSE IT, |    ( MORE CAREFULLY WHEN ABEND DURING | O00920500
+  |                                       |  OTHER USE IT                         |      UPDATING )                       | O00920600
+  +---------------------------------------+---------------------------------------+---------------------------------------| O00921000
+ ===== < CODE = 0310 > =====                                                                                                O03100000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O03100100
+  | FIXED OVERFLOW                        | * DURING CALCULATION                  | * CORRECT STATEMENT                   | O03100200
+  |                                       | * COUNT AREA OVER                     | * INCREASE COUNT DATA FIELD           | O03100300
+  +---------------------------------------+---------------------------------------+---------------------------------------| O03101000
+ ===== < CODE = 0320 > =====                                                                                                O03200000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ O03200100
+  | ZERO DIVIDE                           | * '0' VALUE DIVIDE                    | * '0' CHECK ( REVISE PGM )            | O03200200
+  |                                       | * FIXED BIN OVERFLOW                  | * REVISE PGM ( PREVENT OVERFLOW )     | O03200300
+  |                                       | * ADDITION CALCULATION BETWEEN BIN AND| * USE SAME ATTRIBUTE                  | O03200400
+  |                                       |  DEC                                  |    ( OCCURED IN '+' OR '*' OPERATION )| O03200500
+  +---------------------------------------+---------------------------------------+---------------------------------------| O03201000
+1 ************************************************************************************************************************* U    0000
+  *                  USER ABEND CODE          ( UXXXX )                                                                   * U    0100
+  ************************************************************************************************************************* U    0200
+ ===== < CODE = 0000 > =====                                                                                                U00000000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00000100
+  | * I/O ERROR.                          | * SPECIFICATION ERROR OF SORT CONTROL | * MAKING CORRECTION OF SORT CTRL CARD.| U00000200
+  |                                       |  CARD.                                |                                       | U00000300
+  | * SYNTAX ERROR.                       | * THE JOB EXECUTED NORMALLY UNDER     | * CHANGE THE LENGTH OF THE SEGMENT NA-| U00000400
+  |                                       |  IMS/VS 1.1.3, BUT AFTER RELEASE UP,  |  ME FIELD IN UNQUALIFIED SSA FROM     | U00000500
+  |  ( THIS CODE CANNOT EXPLAIN THE       |  THAT JOB ABENDED UNDER IMS/VS 1.1.4. |  8 BYTE TO 9 BYTE. AND THEN 9TH BYTE  | U00000600
+  |    SPECIFIC ERROR )                   |                                       |  MUST BE BLANK.                       | U00000700
+  |                                       |                                       |                                       | U00000800
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00001000
+ ===== < CODE = 0002 > =====                                                                                                U00020000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00020100
+  |  THE JOB RUNNING UNDER RCS ABENDED.   |  THIS CODE WAS RETURED BY RCS.        |                                       | U00020200
+  |                                       | PLEASE REFER SYSTEM CODE OR ON CODE.  |                                       | U00020300
+  |                                       |                                       |                                       | U00020400
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00021000
+ ===== < CODE = 0005 > =====                                                                                                U00050000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00050100
+  |  RCS CONTROL TABLE CLEAR MISS.        |  THE JOB CONTROLLED BY RCS NORMALLY   | * CLEAR THE RCS CONTROL TABLE ,       | U00050200
+  |                                       | ENDED AT 1ST RUN, AND AGAIN THAT JOB  |  AND RERUN.                           | U00050300
+  |                                       | STARTED AND NORMALLY ENDED.           | * RESET PARAMETER.                    | U00050400
+  |                                       |  THEN, THE END CODE WAS SET ON CONTROL|                                       | U00050500
+  |                                       | TABLE.                                |                                       | U00050600
+  |                                       |                                       |                                       | U00050700
+  |                                       |                                       |                                       | U00050800
+  |                                       |                                       |                                       | U00050900
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00051000
+ ===== < CODE = 0007 > =====                                                                                                U00070000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00070100
+  |  INSUFFICIENT SPACE                   |  AT MONTH END OPERATION, MANY JOBS    |                                       | U00070200
+  |                                       | REQUIRED DASD SPACE ON THE SAME VOLUME|                                       | U00070300
+  |                                       | AT A ONCE TIME.                       |                                       | U00070400
+  |                                       |                                       |                                       | U00070500
+  |                                       |                                       |                                       | U00070600
+  |                                       |                                       |                                       | U00070700
+  |                                       |                                       |                                       | U00070800
+  |                                       |                                       |                                       | U00070900
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00071000
+ ===== < CODE = 0013 > =====                                                                                                U00130000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00130100
+  |  JOB=MS50IMSQ ABENDED.                |  BUFFER FULL BECAUSE OF BMP LOOP.     |  REEXECUTE THE JOB.                   | U00130200
+  |                                       |                                       |                                       | U00130300
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00131000
+ ===== < CODE = 0016 > =====                                                                                                U00160000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00160100
+  | * UNDEFINED FILE (ONCODE = 92)        | * DD NAME MISSING                     | * CORRECT THE DD NAME                 | U00160200
+  | * ZERO DIVIDE    (ONCODE = 320)       | * ISAM SPACE INSUFFICIENT             | * EXTEND THE SPACE OR BLOCKSIZE       | U00160300
+  | * TAPE DATA CHECK                     | * ZERO DIVIDE                         | * ZERO CHECK MUST BE DONE AT DIVISION | U00160400
+  | * DATA EXCEPTION                      | * DECLARE STATEMENT OF USER PGM IS    | * REGENERATE TAPE                     | U00160500
+  | * LENGTH OF RECORD VARIABLE GREATER   |  INCORRECT OR PHISICAL RECORD LENGTH  | * REVISE THE DCL STATEMENT OR,        | U00160600
+  |   THAN RECORD LENGTH.                 |  IS INCORRECT.                        |   REVISE THE JCL PARAMETER OR,        | U00160700
+  |                                       |                                       |   REGENERATE DATA SET                 | U00160800
+  |                                       |                                       |                                       | U00160900
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00161000
+ ===== < CODE = 0020 > =====                                                                                                U00200000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00200100
+  |  DUPLICATE KEY                        |  KEY DUPLICATE OCCURRED DULING VSAM   |  REVISE THE USER PROGRAM WHICH OCCURR-| U00200200
+  |                                       | LOAD WITH JPD0VV1.                    | ED DUPLICATE KEY.                     | U00200300
+  |                                       |                                       |                                       | U00200400
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00201000
+ ===== < CODE = 0021 > =====                                                                                                U00210000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00210100
+  |  SYSTEM ISSUED RETURN CODE 21 .       |  IN ADDITION OF 'FEFE' RECORD TO VSAM |  BOTH RECORD LENGTH SHOULD BE SAME.   | U00210200
+  |                                       | FILE, THE LENGTH OF 'FEFE' RECORD     |                                       | U00210300
+  |                                       | (HIGH VALUE RECORD) LAGER THAN VSAM   |                                       | U00210400
+  |                                       | RECORD LENGTH.                        |                                       | U00210500
+  |                                       |                                       |                                       | U00210600
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00211000
+ ===== < CODE = 0046 > =====                                                                                                U00460000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00460100
+  |  SORT CAPACITY EXCEEDED.              |  SORT WORK HAS INSUFFICIENT SPACE.    |  INCREASE THE SPACE, AND REEXECUTE    | U00460200
+  |          (SORT/MERGE)                 |                                       | THE JOB.                              | U00460300
+  |                                       |                                       |                                       | U00460400
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00461000
+ ===== < CODE = 0061 > =====                                                                                                U00610000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00610100
+  |  I/O ERROR.                           |  HARD ERROR.                          |  RE-INITIALIZE DASD.                  | U00610200
+  |                                       |                                       |                                       | U00610300
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00611000
+ ===== < CODE = 0063 > =====                                                                                                U00630000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00630100
+  | OPEN ERROR                            | BLKSIZE IN  SECOND DD STMT IS LONGER  | * REARRANGEMENT DD STATEMENTS IN ORDER| U00630200
+  |                                       |THAN FIRST IN DD CONCATINATION         |  OF DECREASE OF BLKSIZE               | U00630300
+  |                                       |                                       | * USE SAME BLKSIZE                    | U00630400
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00631000
+ ===== < CODE = 0066 > =====                                                                                                U00660000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00660100
+  | SHORTAGE OF SPACE                     | SHORTAGE OF SORT WORK SPACE           | INCREASE SPACE                        | U00660200
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00661000
+ ===== < CODE = 0068 > =====                                                                                                U00680000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00680100
+  | OCCURED IN SORTD                      | * INVALID MERGE FIELD                 | * CORRECT MERGE FIELD                 | U00680200
+  |                                       | * SEQUENCE ERROR IN ONE OF MERGED DATA| * CORRECT SEQUENCE                    | U00680300
+  |                                       |  SETS                                 |                                       | U00680400
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00681000
+ ===== < CODE = 0099 > =====                                                                                                U00990000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U00990100
+  |                                       |                                       | RERUN                                 | U00990200
+  +---------------------------------------+---------------------------------------+---------------------------------------| U00991000
+ ===== < CODE = 0200 > =====                                                                                                U02000000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U02000100
+  | CONTROL CHARACTER ERROR               | NOT USED ASA CHARACTER                | SET ASA CHARACTER                     | U02000200
+  |                                       |  ( ** ERROR CONTROL CHARACTER         |                                       | U02000300
+  |                                       |       SPECIFIED ** )                  |                                       | U02000400
+  +---------------------------------------+---------------------------------------+---------------------------------------| U02001000
+ ===== < CODE = 0430 > =====                                                                                                U04300000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U04300100
+  | BUFFER CONTROL ERROR                  | TOO LARGE BUFFER POOL SIZE            | DECREASE BUFFER POOL SIZE             | U04300200
+  |  ( IMS/VS )                           |                                       |                                       | U04300300
+  +---------------------------------------+---------------------------------------+---------------------------------------| U04301000
+ ===== < CODE = 0476 > =====                                                                                                U04760000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U04760100
+  | ABEND IN IMS BATCH REGION             | TABLE OVER IN USER PROGRAM            | INCREASE TABLE SIZE                   | U04760200
+  |  ( IMS/VS )                           |                                       |                                       | U04760300
+  +---------------------------------------+---------------------------------------+---------------------------------------| U04761000
+ ===== < CODE = 0725 > =====                                                                                                U07250000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U07250100
+  | S301 ABEND BECAUSE CSA ALLOCATION     | NOT FREED CSA                         | RERUN AFTER RE-IPL                    | U07250200
+  |FAILED                                 |                                       |                                       | U07250300
+  |  ( IMS/VS )                           |                                       |                                       | U07250400
+  +---------------------------------------+---------------------------------------+---------------------------------------| U07251000
+ ===== < CODE = 0844 > =====                                                                                                U08440000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U08440100
+  | ABEND IN IMS BATCH REGION             | SHORTAGE OF OUTPUT SPACE              | INCREASE SPACE                        | U08440200
+  |  ( IMS/VS )                           |                                       |                                       | U08440300
+  +---------------------------------------+---------------------------------------+---------------------------------------| U08441000
+ ===== < CODE = 0852 > =====                                                                                                U08520000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U08520100
+  | DASD CHECK                            | HARDWARE                              | RERUN                                 | U08520200
+  +---------------------------------------+---------------------------------------+---------------------------------------| U08521000
+ ===== < CODE = 0929 > =====                                                                                                U09290000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ U09290100
+  |  IMS/VS TERMINATED ABNORMALLY.        |  THE MEMBER WAS NOT FOUND IN THE DBD  | * ADD THE MEMBER IN THE APPROPRIATE   | U09290200
+  |                                       | OR PSB LIBRARY.                       |  LIBRARY.                             | U09290300
+  |                                       |                                       | * CONCATENATE OTHER PSB OR DBD LIB.   | U09290400
+  |                                       |                                       |                                       | U09290500
+  +---------------------------------------+---------------------------------------+---------------------------------------| U09291000
+ ===== < CODE = 0612 > =====                                                                                                0612 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 0612 0100
+  | ERROR DURING CHARACTER STRING TO      | * CONVERSION ERROR.                   | *                                     | 0612 0200
+  | ARITHMETIC CONVERSION.                |                                       |                                       | 0612 0300
+  |                                       |                                       |                                       | 0612 0400
+  |                                       |                                       |                                       | 0612 0500
+  |                                       |                                       |                                       | 0612 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| 0612 1000
+ ===== < CODE = 0853 > =====                                                                                                0853 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 0853 0100
+  | DLI/DB ROOT SEGMENT ACCESS TROUBLE.   | * I/O ERROR OF DL/I DATA BASE.        | * RELOAD OF DATA BASE.                | 0853 0200
+  |   (IMS/VS)                            |                                       |                                       | 0853 0300
+  |                                       |                                       |                                       | 0853 0400
+  |                                       |                                       |                                       | 0853 0500
+  |                                       |                                       |                                       | 0853 0600
+  |                                       |                                       |                                       | 0853 0700
+  |                                       |                                       |                                       | 0853 0800
+  |                                       |                                       |                                       | 0853 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 0853 1000
+ ===== < CODE = 0990 > =====                                                                                                0990 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 0990 0100
+  | DFS2429I DBD OUT OF HIERARCHIC ABEND. | * INCORRECT ORDER OF SEGMENT IN DBD   | * RE-EXCUTE OF PSBGEN.                | 0990 0200
+  |   (IMS/VS)                            |   AND PSB.                            |                                       | 0990 0300
+  |                                       |                                       |                                       | 0990 0400
+  |                                       |                                       |                                       | 0990 0500
+  |                                       |                                       |                                       | 0990 0600
+  |                                       |                                       |                                       | 0990 0700
+  |                                       |                                       |                                       | 0990 0800
+  |                                       |                                       |                                       | 0990 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 0990 1000
+ ===== < CODE = 1000 > =====                                                                                                1000 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 1000 0100
+  | USER ABEND IN STANDARD MACRO.         |                                       |                                       | 1000 0200
+  |                                       |                                       |                                       | 1000 0300
+  |                                       |                                       |                                       | 1000 0400
+  |                                       |                                       |                                       | 1000 0500
+  |                                       |                                       |                                       | 1000 0600
+  |                                       |                                       |                                       | 1000 0700
+  |                                       |                                       |                                       | 1000 0800
+  |                                       |                                       |                                       | 1000 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 1000 1000
+ ===== < CODE = 1029 > =====                                                                                                1092 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 1092 0100
+  | ATTEMPT TO REPOSITION IN VSAM DATA    | * WHEN READ THE VSAM FILE WITH GENKEY,| * CREATE THE HIGHEST KEY VALUE RECORD | 1092 0200
+  | SET FAILED.                           |   THE SPECIFIED KEY IS GREATER THAN   |   IN THE VSAM FILE.                   | 1092 0300
+  |                                       |   THE HIGHEST KEY OF THE VSAM FILE.   |                                       | 1092 0400
+  |                                       | * WHEN READ DIRECT,ERROR OCCURED TOO. |                                       | 1092 0500
+  |                                       |                                       |                                       | 1092 0600
+  +---------------------------------------+---------------------------------------+---------------------------------------| 1092 1000
+ ===== < CODE = 1111 > =====                                                                                                1111 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 1111 0100
+  | I/O ERROR.                            |                                       |                                       | 1111 0200
+  |                                       |                                       |                                       | 1111 0300
+  |                                       |                                       |                                       | 1111 0400
+  |                                       |                                       |                                       | 1111 0500
+  |                                       |                                       |                                       | 1111 0600
+  |                                       |                                       |                                       | 1111 0700
+  |                                       |                                       |                                       | 1111 0800
+  |                                       |                                       |                                       | 1111 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 1111 1000
+ ===== < CODE = 1428 > =====                                                                                                1428 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 1428 0100
+  |                                       |                                       |                                       | 1428 0200
+  |   (IMS/VS)                            |                                       |                                       | 1428 0300
+  |                                       |                                       |                                       | 1428 0400
+  |                                       |                                       |                                       | 1428 0500
+  |                                       |                                       |                                       | 1428 0600
+  |                                       |                                       |                                       | 1428 0700
+  |                                       |                                       |                                       | 1428 0800
+  |                                       |                                       |                                       | 1428 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 1428 1000
+ ===== < CODE = 2004 > =====                                                                                                2004 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 2004 0100
+  | NAPS SPACE OVER.                      |                                       |                                       | 2004 0200
+  |                                       |                                       |                                       | 2004 0300
+  |                                       |                                       |                                       | 2004 0400
+  |                                       |                                       |                                       | 2004 0500
+  |                                       |                                       |                                       | 2004 0600
+  |                                       |                                       |                                       | 2004 0700
+  |                                       |                                       |                                       | 2004 0800
+  |                                       |                                       |                                       | 2004 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 2004 1000
+ ===== < CODE = 3001 > =====                                                                                                3001 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 3001 0100
+  |                                       |                                       |                                       | 3001 0200
+  |                                       |                                       |                                       | 3001 0300
+  |                                       |                                       |                                       | 3001 0400
+  |                                       |                                       |                                       | 3001 0500
+  |                                       |                                       |                                       | 3001 0600
+  |                                       |                                       |                                       | 3001 0700
+  |                                       |                                       |                                       | 3001 0800
+  |                                       |                                       |                                       | 3001 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 3001 1000
+ ===== < CODE = 8091 > =====                                                                                                8091 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 8091 0100
+  | OPERATION EXCEPTION.                  | * SUBROUTINE IS NOT LINK-EDITTED.     | * LINK OF SUBROUTINE.                 | 8091 0200
+  | ( AS SAME AS S0C1 )                   | * SPECIFIED ENTRY POINT OF MODULE IS  | * CORRECR ENTRY POINT.                | 8091 0300
+  |                                       |   NOT RIGHT.                          |                                       | 8091 0400
+  |                                       | * INCORRECT VALUE IS SET IN THE LABEL |                                       | 8091 0500
+  |                                       |   VALIABLE.                           |                                       | 8091 0600
+  |                                       | * DESTROY                             |                                       | 8091 0700
+  |                                       |                                       |                                       | 8091 0800
+  |                                       |                                       |                                       | 8091 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 8091 1000
+ ===== < CODE = 8094 > =====                                                                                                8094 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 8094 0100
+  | PROTECTION EXCEPTION.                 |                                       |                                       | 8094 0200
+  |                                       |                                       |                                       | 8094 0300
+  |                                       |                                       |                                       | 8094 0400
+  |                                       |                                       |                                       | 8094 0500
+  |                                       |                                       |                                       | 8094 0600
+  |                                       |                                       |                                       | 8094 0700
+  |                                       |                                       |                                       | 8094 0800
+  |                                       |                                       |                                       | 8094 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 8094 1000
+ ===== < CODE = 8097 > =====                                                                                                8097 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 8097 0100
+  | DATA EXCEPTION.                       |                                       |                                       | 8097 0200
+  | ( AS SAME AS S0C7 )                   |                                       |                                       | 8097 0300
+  |                                       |                                       |                                       | 8097 0400
+  |                                       |                                       |                                       | 8097 0500
+  |                                       |                                       |                                       | 8097 0600
+  |                                       |                                       |                                       | 8097 0700
+  |                                       |                                       |                                       | 8097 0800
+  |                                       |                                       |                                       | 8097 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 8097 1000
+ ===== < CODE = YYYY > =====                                                                                                9YYY 0000
+  +------------< EXPLANATION >------------+---------------< CAUSE >---------------+-------------< SOLUTION >--------------+ 9YYY 0100
+  |                                       |                                       |                                       | 9YYY 0200
+  |                                       |                                       |                                       | 9YYY 0300
+  |                                       |                                       |                                       | 9YYY 0400
+  |                                       |                                       |                                       | 9YYY 0500
+  |                                       |                                       |                                       | 9YYY 0600
+  |                                       |                                       |                                       | 9YYY 0700
+  |                                       |                                       |                                       | 9YYY 0800
+  |                                       |                                       |                                       | 9YYY 0900
+  +---------------------------------------+---------------------------------------+---------------------------------------| 9YYY 1000
+
